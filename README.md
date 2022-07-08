@@ -1,4 +1,4 @@
-![CI](https://github.com/simboonlong/notes/workflows/CI/badge.svg?branch=master&event=push) [![Netlify Status](https://api.netlify.com/api/v1/badges/f32087c3-1555-4006-9fbd-0c2e70f86c37/deploy-status)](https://app.netlify.com/sites/notes-demo/deploys)
+[![CI/CD](https://github.com/simboonlong/notes/actions/workflows/manual.yml/badge.svg)](https://github.com/simboonlong/notes/actions/workflows/manual.yml) [![Netlify Status](https://api.netlify.com/api/v1/badges/f32087c3-1555-4006-9fbd-0c2e70f86c37/deploy-status)](https://app.netlify.com/sites/notes-demo/deploys)
 
 # Notes
 
