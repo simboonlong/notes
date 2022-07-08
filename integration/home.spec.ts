@@ -12,15 +12,13 @@ test("should show menu collapse, hide menu expand", async (t) => {
   await t.expect(Selector("#expand").visible).notOk();
 });
 
-test.skip("should scroll to content, on quick links click", async (t) => {
+test("should scroll to content, on quick links click", async (t) => {
   await t.click(Selector("label"));
-  await t.click(sidebar.find("a").withExactText("Block Quotes"));
+  await t.click(sidebar.find("a").withExactText("Code"));
   await t.wait(2000);
 
-  const st = Math.ceil(await getScrollTop());
-  const elTop = Math.ceil(
-    (await main.find("#blockquotes").offsetTop) +
-      (await Selector("#main").offsetTop),
-  );
+  const st = Math.ceil(await getScrollTop()); // TODO: scrollTop keeps giving subpixel value
+  const elTop =
+    (await main.find("#code").offsetTop) + (await Selector("#main").offsetTop);
   await t.expect(st).eql(elTop);
 });
