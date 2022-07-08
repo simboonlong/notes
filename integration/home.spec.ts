@@ -18,9 +18,9 @@ test("should scroll to content, on quick links click", async (t) => {
   await t.wait(2000);
 
   const st = Math.round(await getScrollTop());
-  const elTop =
-    Math.round(await main.find("#code").offsetTop) +
-    (await Selector("#main").offsetTop);
+  const elTop = Math.round(
+    (await main.find("#code").offsetTop) + (await Selector("#main").offsetTop),
+  );
 
   await t.expect(st).eql(elTop);
 });
