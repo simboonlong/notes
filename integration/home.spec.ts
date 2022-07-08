@@ -17,8 +17,8 @@ test("should scroll to content, on quick links click", async (t) => {
   await t.click(sidebar.find("a").withExactText("Block Quotes"));
   await t.wait(2000);
 
-  const st = Math.round(await getScrollTop());
-  const elTop = Math.round(
+  const st = Math.ceil(await getScrollTop());
+  const elTop = Math.ceil(
     (await main.find("#blockquotes").offsetTop) +
       (await Selector("#main").offsetTop),
   );
