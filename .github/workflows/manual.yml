@@ -1,0 +1,16 @@
+name: CI/CD
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout v2
+        uses: actions/checkout@v2
+      - name: Setup Node v2
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - name: Clean install
+        run: npm ci
+      - name: Integration test
+        run: npm run e2e:ci
