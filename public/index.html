@@ -130,7 +130,6 @@
           sidebar.shadowRoot
             .querySelectorAll('a[href^="#"]')
             .forEach((link) => {
-              console.log(link);
               link.addEventListener("click", (event) => {
                 const href = event.target.getAttribute("href");
                 const id = href.replace("#", "");
