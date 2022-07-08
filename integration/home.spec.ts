@@ -12,7 +12,7 @@ test("should show menu collapse, hide menu expand", async (t) => {
   await t.expect(Selector("#expand").visible).notOk();
 });
 
-test("should scroll to content, on quick links click", async (t) => {
+test.skip("should scroll to content, on quick links click", async (t) => {
   await t.click(Selector("label"));
   await t.click(sidebar.find("a").withExactText("Block Quotes"));
   await t.wait(2000);
