@@ -21,12 +21,12 @@ Because I heart web.
 
 ## Tell me more
 
-`Notes` is a single HTML page. Leveraging on [zero-md](https://github.com/zerodevx/zero-md), it provides:
+Notes is a single HTML page. Leveraging on [zero-md](https://github.com/zerodevx/zero-md), it provides:
 
 - A main area for notes taking
-  - notes.md
+  - `notes.md`
 - An aside for table of contents
-  - sidebar.md
+  - `sidebar.md`
 
 These are the only 2 files you will need to tinkle with.
 

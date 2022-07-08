@@ -17,10 +17,8 @@ test("should scroll to content, on quick links click", async (t) => {
   await t.click(sidebar.find("a").withExactText("Code"));
   await t.wait(2000);
 
-  const st = Math.round(await getScrollTop());
+  const st = await getScrollTop();
   const elTop =
-    Math.round(await main.find("#code").offsetTop) +
-    (await Selector("#main").offsetTop);
-
-  await t.expect(st).eql(elTop);
+    (await main.find("#code").offsetTop) + (await Selector("#main").offsetTop);
+  await t.expect(st).within(elTop - 1, elTop + 1); // allow some margin for subpixel errors
 });
