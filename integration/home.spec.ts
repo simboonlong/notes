@@ -14,11 +14,13 @@ test("should show menu collapse, hide menu expand", async (t) => {
 
 test("should scroll to content, on quick links click", async (t) => {
   await t.click(Selector("label"));
-  await t.click(sidebar.find("a").withExactText("Code"));
+  await t.click(sidebar.find("a").withExactText("Block Quotes"));
   await t.wait(2000);
 
-  const st = await getScrollTop();
-  const elTop =
-    (await main.find("#code").offsetTop) + (await Selector("#main").offsetTop);
+  const st = Math.round(await getScrollTop());
+  const elTop = Math.round(
+    (await main.find("#blockquotes").offsetTop) +
+      (await Selector("#main").offsetTop),
+  );
   await t.expect(st).eql(elTop);
 });
