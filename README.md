@@ -1,10 +1,8 @@
 ![CI](https://github.com/simboonlong/notes/workflows/CI/badge.svg?branch=master&event=push) [![Netlify Status](https://api.netlify.com/api/v1/badges/f32087c3-1555-4006-9fbd-0c2e70f86c37/deploy-status)](https://app.netlify.com/sites/notes-demo/deploys)
 
-<p style="font-size:72px; margin: 0;">📝</p>
-
 # Notes
 
-Write web-friendly notes quickly in Markdown.
+📝 Write web-friendly notes quickly in Markdown. 📝
 
 ## Why?
 
