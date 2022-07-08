@@ -20,5 +20,5 @@ test("should scroll to content, on quick links click", async (t) => {
   const st = await getScrollTop();
   const elTop =
     (await main.find("#code").offsetTop) + (await Selector("#main").offsetTop);
-  await t.expect(st).within(elTop - 1, elTop + 1); // allow some offset leeway, margin for subpixel errors
+  await t.expect(st).within(elTop - 1, elTop + 1); // allow some margin for subpixel errors
 });
