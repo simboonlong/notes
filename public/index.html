@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="128x128"
+      href="https://avatars.dicebear.com/api/pixel-art-neutral/notes.png?size=128"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://avatars.dicebear.com/api/pixel-art-neutral/notes.png?size=32"
+    />
+    <meta
+      name="description"
+      content="Write web-friendly notes quickly in Markdown."
+    />
+    <meta name="author" content="Sim Boon Long" />
+    <meta name="keywords" content="notes, markdown" />
+    <title>Notes</title>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.legacy.min.js"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: true,
+            padding: {
+              DEFAULT: "1rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        --sidebar-width: 200px;
+        --sidebar-width-desktop: 240px;
+      }
+      input:checked ~ aside #expand {
+        display: none;
+      }
+      input:checked ~ aside #collapse {
+        display: block;
+      }
+      @media only screen and (max-width: 1279px) {
+        aside {
+          width: var(--sidebar-width);
+        }
+        input:checked ~ main {
+          transform: translateX(var(--sidebar-width));
+        }
+        input:checked ~ aside {
+          transform: translateX(0);
+        }
+      }
+      @media only screen and (min-width: 1280px) {
+        aside {
+          width: var(--sidebar-width-desktop);
+        }
+        input:checked ~ aside {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overflow-hidden">
+      <input type="checkbox" class="hidden" id="menu" />
+      <aside
+        class="transition-all duration-300 ease-out fixed h-screen z-10 left-0 -translate-x-full"
+      >
+        <div class="overflow-auto h-full">
+          <label
+            for="menu"
+            class="transition duration-300 ease-out absolute text-center leading-[64px] w-16 h-16 translate-x-full bottom-8 right-0 bg-gray-100 cursor-pointer text-4xl font-bold hover:bg-gray-200 drop-shadow-lg rounded-tr-lg rounded-br-lg"
+          >
+            <span class="hidden" id="collapse">-</span>
+            <span id="expand">+</span>
+          </label>
+          <div
+            class="absolute z-index top-0 left-0 h-full w-full bg-gray-100"
+          ></div>
+          <div class="relative z-10">
+            <div class="container py-8">
+              <zero-md src="/sidebar.md" id="sidebar"></zero-md>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <main class="transition duration-300 ease-out">
+        <div class="container lg:max-w-5xl xl:max-w-3xl py-8">
+          <zero-md src="/notes.md" id="main">
+            <template>
+              <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@4/github-markdown.min.css"
+              />
+              <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/gh/PrismJS/prism@1/themes/prism.min.css"
+              />
+              <style>
+                .markdown-body li > p,
+                .markdown-body ol > p {
+                  margin: 0;
+                }
+              </style>
+            </template>
+          </zero-md>
+        </div>
+      </main>
+    </div>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("menu");
+        const main = document.getElementById("main");
+        const sidebar = document.getElementById("sidebar");
+
+        sidebar.addEventListener("zero-md-rendered", () => {
+          sidebar.shadowRoot
+            .querySelectorAll('a[href^="#"]')
+            .forEach((link) => {
+              console.log(link);
+              link.addEventListener("click", (event) => {
+                const href = event.target.getAttribute("href");
+                const id = href.replace("#", "");
+                const el = main.shadowRoot.getElementById(id);
+
+                el.scrollIntoView({
+                  behavior: "smooth",
+                });
+                menu.click();
+              });
+            });
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (
+            event.key == "Escape" ||
+            event.key == "Esc" ||
+            event.keyCode == 27
+          ) {
+            menu.click();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

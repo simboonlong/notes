@@ -1,0 +1,26 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "Write web-friendly notes quickly in Markdown.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "e2e": "testcafe chrome -L integration/home.spec.ts",
+    "e2e:ci": "testcafe chrome:headless integration/home.spec.ts --app 'npm run start'",
+    "start": "browser-sync start --server public --files public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simboonlong/notes.git"
+  },
+  "author": "Sim Boon Long",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simboonlong/notes/issues"
+  },
+  "homepage": "https://github.com/simboonlong/notes#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "testcafe": "^1.19.0"
+  }
+}
