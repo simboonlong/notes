@@ -2,15 +2,16 @@ name: CI/CD
 on: [push]
 jobs:
   test:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
-      - name: Checkout v2
-        uses: actions/checkout@v2
-      - name: Setup Node v2
-        uses: actions/setup-node@v2
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
         with:
-          node-version: "14"
-      - name: Clean install
+          node-version: "16"
+          cache: npm
+      - name: Install
         run: npm ci
       - name: Integration test
         run: npm run e2e:ci
