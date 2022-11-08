@@ -2,30 +2,34 @@
 
 # Notes
 
-📝 Write web-friendly notes quickly in Markdown. 📝
+Write web-friendly notes quickly in Markdown. 📝
 
 ## Why?
 
-Sometimes I want to write down notes with internal + external text hyperlinks.
+Sometimes I want to write down notes with the ability to:
+
+- Have internal + external text hyperlinks.
+- Host them quickly to share across the web.
+- Not care too much about formating / styling.
 
 [Markdown](https://daringfireball.net/projects/markdown/) looks perfect. It is essentially made up of 2 parts:
 
-- Plain text (with formatting syntax)
-- Renderer (text to HTML)
+- Plain text. (with formatting syntax)
+- Renderer. (text to HTML)
 
 ## Ok, but...
 
 Why not Microsoft word document? Google document?
 
-Because I heart web.
+Because web FTW.
 
 ## Tell me more
 
 Notes is a single HTML page. Leveraging on [zero-md](https://github.com/zerodevx/zero-md), it provides:
 
-- A main area for notes taking
+- A main area for notes taking.
   - `notes.md`
-- An aside for table of contents
+- An aside for table of contents.
   - `sidebar.md`
 
 These are the only 2 files you will need to tinkle with.
@@ -37,12 +41,15 @@ See [here](https://notes-demo.netlify.app).
 ## Run locally
 
 ```
-npm i
 npm run start
 ```
 
 ## Host remotely
 
 Upload public folder contents onto the web root of your favourite web hosting.
+
+## Readings
+
+[Markdown parsers](https://css-tricks.com/choosing-right-markdown-parser).
 
 Author © [Sim Boon Long](https://simboonlong.com).
