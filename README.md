@@ -52,4 +52,8 @@ Upload public folder contents onto the web root of your favourite web hosting.
 
 [Markdown parsers](https://css-tricks.com/choosing-right-markdown-parser).
 
+### Lazier alternative
+
+[Github gist](https://gist.github.com).
+
 Author © [Sim Boon Long](https://simboonlong.com).
