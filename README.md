@@ -4,7 +4,7 @@
 
 Write web-friendly notes quickly in Markdown. 📝
 
-## Why?
+### Why?
 
 Sometimes I want to write down notes with the ability to:
 
@@ -17,22 +17,20 @@ Sometimes I want to write down notes with the ability to:
 - Plain text. (with formatting syntax)
 - Renderer. (text to HTML)
 
-## Ok, but...
+### Ok, but...
 
 Why not Microsoft word document? Google document?
 
 Because web FTW.
 
-## Tell me more
+### Tell me more
 
 Notes is a single HTML page. Leveraging on [zero-md](https://github.com/zerodevx/zero-md), it provides:
 
 - A main area for notes taking.
-  - `notes.md`
+  - `notes.md` <- This is the **only** file you will need to edit. 🔥
 - An aside for table of contents.
-  - `sidebar.md`
-
-These are the only 2 files you will need to tinkle with.
+  - `sidebar.md` (generated based on h2 and h3 headers used)
 
 ## Demo
 
@@ -40,15 +38,17 @@ See [here](https://notes-demo.netlify.app).
 
 ## Run locally
 
-```
+```sh
 npm run start
 ```
+
+Make edits to `notes.md` and head to `http://localhost:3000` to view updated changes.
 
 ## Host remotely
 
 Upload public folder contents onto the web root of your favourite web hosting.
 
-## Readings
+### Readings
 
 [Markdown parsers](https://css-tricks.com/choosing-right-markdown-parser).
 

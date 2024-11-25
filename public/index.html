@@ -26,7 +26,7 @@
     <title>Notes</title>
     <script
       type="module"
-      src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.legacy.min.js"
+      src="https://cdn.jsdelivr.net/npm/zero-md@3?register"
     ></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -98,7 +98,18 @@
           ></div>
           <div class="relative z-10">
             <div class="container py-8">
-              <zero-md src="/sidebar.md" id="sidebar"></zero-md>
+              <zero-md src="/sidebar.md" id="sidebar">
+                <template>
+                  <link
+                    rel="stylesheet"
+                    href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@4/github-markdown.min.css"
+                  />
+                  <link
+                    rel="stylesheet"
+                    href="https://cdn.jsdelivr.net/gh/PrismJS/prism@1/themes/prism.min.css"
+                  />
+                </template>
+              </zero-md>
             </div>
           </div>
         </div>

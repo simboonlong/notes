@@ -1,5 +1,10 @@
-#### Quick links
-
-- [Block Quotes](#blockquotes)
+- [Header](#header)
+  - [Sub header](#sub-header)
+  - [Another sub header](#another-sub-header)
+- [Emphasis](#emphasis)
+- [Blockquotes](#blockquotes)
+- [Lists](#lists)
 - [Code](#code)
+- [Tables](#tables)
+- [Links](#links)
 - [Images](#images)
