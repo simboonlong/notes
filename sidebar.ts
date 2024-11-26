@@ -4,7 +4,7 @@ import { marked, Tokens } from "marked";
 const INPUT_FILE: string = "./public/notes.md";
 const OUTPUT_FILE: string = "./public/sidebar.md";
 
-const extractHeaders = (markdown: string): string => {
+export const extractHeaders = (markdown: string): string => {
   const tokens = marked.lexer(markdown);
   return tokens
     .filter((token) => token.type === "heading")
