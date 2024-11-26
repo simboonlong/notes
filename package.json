@@ -4,6 +4,7 @@
   "description": "Write web-friendly notes quickly in Markdown.",
   "main": "index.js",
   "scripts": {
+    "test": "vitest",
     "e2e": "testcafe chrome -L integration/home.spec.ts",
     "e2e:ci": "testcafe chrome:headless integration/home.spec.ts --app 'npm run start'",
     "sidebar": "npx tsx --watch sidebar.ts",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "browser-sync": "^3.0.3",
     "marked": "^15.0.2",
-    "testcafe": "^3.7.0"
+    "testcafe": "^3.7.0",
+    "vitest": "^2.1.5"
   }
 }
